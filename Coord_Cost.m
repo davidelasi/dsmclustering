@@ -121,7 +121,7 @@ coordination_cost= zeros(1,DSM_size);
 
 for i=1:DSM_size
    for j=i+1:DSM_size		% j=i+1 to skip the diagonals
-      if (DSM_matrix(i,j)>0 | DSM_matrix(j,i)>0)% if a dependancy exists between i & j
+      if (DSM_matrix(i,j)>0 || DSM_matrix(j,i)>0)% if a dependancy exists between i & j
          cost_total = 0;
          
          % check if any clusters contain the both elements

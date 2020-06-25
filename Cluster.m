@@ -166,7 +166,7 @@ old_data(pass).total_coord_cost = total_coord_cost;
 % Do this until a better solution is found or we have looped back max_repeat times.
 % If we reach max_repeat, then report the best solution thathad been found.
 
-while ( ((total_coord_cost > best_coord_cost) & (pass <= max_repeat))| (first_run == 1))
+while ( ((total_coord_cost > best_coord_cost) && (pass <= max_repeat))|| (first_run == 1))
    if first_run == 0		% only if not first pass through clustering routine
       pass = pass+1;	% increment # passes
       % store the current data
@@ -214,7 +214,7 @@ while ( ((total_coord_cost > best_coord_cost) & (pass <= max_repeat))| (first_ru
             cluster_list(:,1) = 0;
             
             % Determine the list of clusters affected
-            cluster_list(1:n_clusters,1) = ((cluster_bid(:)==best_cluster_bid) & (Cluster_matrix(:,elmt)==0));
+            cluster_list(1:n_clusters,1) = ((cluster_bid(:)==best_cluster_bid) && (Cluster_matrix(:,elmt)==0));
             
             
             % copy the cluster matrix into new matrices
@@ -222,7 +222,7 @@ while ( ((total_coord_cost > best_coord_cost) & (pass <= max_repeat))| (first_ru
             new_cluster_size 		= cluster_size;
             
             % proceed with cluster changes in the new cluster
-            new_cluster_matrix(1:n_clusters,elmt) = new_cluster_matrix(1:n_clusters,elmt) | cluster_list;
+            new_cluster_matrix(1:n_clusters,elmt) = new_cluster_matrix(1:n_clusters,elmt) || cluster_list;
             new_cluster_size(1:n_clusters) = new_cluster_size(1:n_clusters) + (cluster_list==1)*1;
             
             

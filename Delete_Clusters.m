@@ -53,8 +53,8 @@ new_cluster_size = zeros(size(cluster_size));
 % delete cluster j
 for i=1:n_clusters
    for j=i+1:n_clusters
-      if (cluster_size(i) >= cluster_size(j) & cluster_size(j)>0)
-         if all(((cluster_matrix(i,:) & cluster_matrix(j,:)) == cluster_matrix(j,:)))
+      if (cluster_size(i) >= cluster_size(j) && cluster_size(j)>0)
+         if all(((cluster_matrix(i,:) && cluster_matrix(j,:)) == cluster_matrix(j,:)))
             cluster_matrix(j,:)=0;
             cluster_size(j) = 0;
          end
@@ -65,8 +65,8 @@ end
 % if cluster i is completely contained in cluster j, delete cluster i
 for i=1:n_clusters
    for j= i+1:n_clusters
-      if (cluster_size(i) < cluster_size(j) & cluster_size(i)>0)
-         if all(((cluster_matrix(i,:) & cluster_matrix(j,:)) == cluster_matrix(i,:)))	% cluster i is contained in j
+      if (cluster_size(i) < cluster_size(j) && cluster_size(i)>0)
+         if all(((cluster_matrix(i,:) && cluster_matrix(j,:)) == cluster_matrix(i,:)))	% cluster i is contained in j
             cluster_matrix(i,:)=0;
             cluster_size(i)=0;
          end
