@@ -41,7 +41,7 @@
 %							to the DSM elements												*
 %																									*
 
-% Elevator_DSM_varied; % enter name of DSM script file
+Elevator_DSM_varied; % enter name of DSM script file
 
 % ********************* END GET DSM MATRIX  ********************************
 
@@ -67,7 +67,7 @@
 % **************************************************************************
 
 print_flag = 0;
-% extract_elements = [9,16,60,61,40,14,38,25];
+extract_elements = [9,16,60,61,40,14,38,25];
 
 %% Cluster_param.pow_cc				=	1;		% penalty assigned to cluster size(2)
 

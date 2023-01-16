@@ -118,7 +118,7 @@ if plot_flag == 1
       ylabel(['Run ' num2str(i) ' Avg']);
       Tcost = Results(i).total_coord_cost;
       xlabel(['Clusters  (total Avg: ' num2str(totalmean(i)) ' ); Coord Cost: ' num2str(Tcost)]);
-      if (i == 1) || (mod(i,(plots_per_page+1))==0)
+      if (i == 1) | (mod(i,(plots_per_page+1))==0)
          title(['Mean: ' Total_run_mean '      Median: ' Total_run_median]);
       end
       grid;

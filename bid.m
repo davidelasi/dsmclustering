@@ -62,7 +62,7 @@ for i=1:n_clusters
    out=0;
    for j=1:DSM_size
       % if element J is in Cluster i, need j not equal to element to avoid diagnal
-      if((cluster_matrix(i,j)==1)&&(j~=elmt))		
+      if((cluster_matrix(i,j)==1)&(j~=elmt))		
          if (DSM_matrix(j,elmt)>0)
             in = in + DSM_matrix(j,elmt);
          end
@@ -72,7 +72,7 @@ for i=1:n_clusters
       end
    end
    % if there were any interactions with members of the clusters, make a bid
-   if ( (in>0) || (out>0))
+   if ( (in>0) | (out>0))
       if (cluster_size(i) == max_cluster_size)
          cluster_bid(i) = 0;
       else
